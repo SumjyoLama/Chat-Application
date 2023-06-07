@@ -11,8 +11,17 @@ import { Container,
        } from '@chakra-ui/react'
 import Login from '../components/Authentication/Login'
 import Signup from '../components/Authentication/Signup'
+import { useNavigate } from 'react-router-dom'
+import {useEffect} from "react"
 
 const Homepage = () => {
+ const navigate = useNavigate();
+   
+  useEffect(() =>{
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+
+    if(user) navigate("/chats");
+  }, [navigate]);
   return (
     <Container maxW = "xl" centerContent>
       <Box
@@ -27,7 +36,7 @@ const Homepage = () => {
         >
 
 
-        <Text fontSize={"4xl" }fontFamily={"work sans"} color = "black" textAlign={"center"}>Guff-Gaff</Text>
+        <Text fontSize={"4xl" }fontFamily={"work sans"} color = "black" textAlign={"center"}>Chat-App</Text>
       </Box>
       <Box 
       bg = "white" 

@@ -12,6 +12,7 @@ function App() {
       <Route path = "/Chats" element={<ChatPage/>}/>
     
     </Routes>
+    
     </div>
   );
 }
