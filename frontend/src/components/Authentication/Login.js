@@ -3,9 +3,9 @@ import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
 import { useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 import { useToast } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
    const toast = useToast();
-   const history = useNavigate();
+   const navigate = useNavigate();
    const handleClick = () => setShow(!show);
 
   
@@ -41,13 +41,13 @@ const Login = () => {
         },
       };
 
-      const { data } = await Axios.post(
+      const { data } = await axios.post(
         "/api/user/login",
         { email, password },
         config
       );
 
-      // console.log(JSON.stringify(data));
+      console.log(JSON.stringify(data));
       toast({
         title: "Login Successful",
         status: "success",
@@ -57,7 +57,7 @@ const Login = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      history.push("/chats");
+      navigate("/chats");
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -98,6 +98,7 @@ const Login = () => {
           </InputRightElement>
         </InputGroup>
       </FormControl>
+      
       <Button
         colorScheme="blue"
         width="100%"
