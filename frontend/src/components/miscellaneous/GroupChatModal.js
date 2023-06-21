@@ -16,7 +16,7 @@ import {Modal,
     import { ChatState } from "../../Context/ChatProvider";
     import {FormControl} from "@chakra-ui/form-control"
     import axios from "axios"
-    import UserListItem from "../UserAvatar/UserListItem"
+    import UserListItem from "../UserAvatar/UserListItem";
     import UserBadgeItem from '../UserAvatar/UserBadgeItem';
 
  const GroupChatModal = ({children}) => {
