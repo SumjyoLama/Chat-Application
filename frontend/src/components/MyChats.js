@@ -9,10 +9,11 @@ import ChatLoading from './ChatLoading';
 import {getSender} from '../config/ChatLogics'
 import GroupChatModal from './miscellaneous/GroupChatModal';
 
-const   MyChats = (fetchAgain) =>{
+  const   MyChats = (fetchAgain) =>{
   const [loggedUser, setLoggedUser] = useState();
   const {selectedChat, setSelectedChat,user, chats, setChats} = ChatState();
   const toast = useToast();
+  
 
    const fetchChats = async () => {
     // console.log(user._id);

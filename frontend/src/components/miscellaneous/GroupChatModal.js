@@ -150,7 +150,7 @@ import {Modal,
             </FormControl>
             <FormControl>
               <Input
-                placeholder="Add Users eg: tsering, dolma, parbati"
+                placeholder="Add Users eg: tsering, dolma, Teju"
                 marginBottom={1}
                 onChange={(e) => handleSearch(e.target.value)}
               />
