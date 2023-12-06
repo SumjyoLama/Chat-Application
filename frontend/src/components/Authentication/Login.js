@@ -57,7 +57,9 @@ const Login = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      navigate("/chats");
+     
+      window.location.reload();
+       navigate("/chats");
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -108,17 +110,6 @@ const Login = () => {
       >
         Login
       </Button>
-      {/* <Button
-        variant="solid"
-        colorScheme="red"
-        width="100%"
-        onClick={() => {
-          setEmail("guest@example.com");
-          setPassword("123456");
-        }}
-      >
-        Get Guest User Credentials
-      </Button> */}
     </VStack>
   );
 };

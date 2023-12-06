@@ -5,7 +5,7 @@ import { VStack } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -70,7 +70,7 @@ const Signup = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
-      history.push("/chats");
+      history("/Chats");
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -102,7 +102,7 @@ const Signup = () => {
       data.append("file", pics);
       data.append("upload_preset", "chat-app");
       data.append("cloud_name", "sumjyo");
-      fetch("https://api.cloudinary.com/v1_1/sumjyo", {
+      fetch("https://api.cloudinary.com/v1_1/sumjyo/image/upload", {
         method: "post",
         body: data,
       })
